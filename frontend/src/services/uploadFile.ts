@@ -1,5 +1,6 @@
 import { ApiUploadFileResponse, User } from "../types";
 import { API_URL } from "./config";
+import { ErrorConnection } from "./errors";
 
 export const uploadFile = async (file: File): Promise<[Error, null, null] | [null, string, User[]]> => {
   const formData = new FormData()
@@ -15,8 +16,6 @@ export const uploadFile = async (file: File): Promise<[Error, null, null] | [nul
     if (!res.ok) return [new Error(message), null, null]
     return [null, message, data]
   } catch (error) {
-    if (error instanceof Error) return [error, null, null]
+    return [ErrorConnection(), null, null]
   }
-
-  return [new Error('Error desconocido'), null, null]
 }

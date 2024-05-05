@@ -1,5 +1,6 @@
 import { type ApiSearchUsersResponse, User } from "../types"
 import { API_URL } from "./config"
+import { ErrorConnection } from "./errors"
 
 export const searchUsers = async ({ search }: { search: string }): Promise<[Error, null] | [null, User[]]> => {
   try {
@@ -7,7 +8,6 @@ export const searchUsers = async ({ search }: { search: string }): Promise<[Erro
     const json = await response.json() as ApiSearchUsersResponse
     return [null, json.data]
   } catch (error) {
-    if (error instanceof Error) return [error, null]
+    return [ErrorConnection(), null]
   }
-  return [new Error('Error desconocido'), null]
 }
