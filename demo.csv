@@ -1,0 +1,14 @@
+id,username,email,role,age,city
+1,user1,user1@example.com,admin,30,New York
+2,user2,user2@example.com,user,25,Los Angeles
+3,user3,user3@example.com,user,35,Chicago
+4,user4,user4@example.com,user,28,San Francisco
+5,user5,user5@example.com,user,40,Miami
+6,user6,user6@example.com,user,33,Houston
+7,user7,user7@example.com,user,22,Seattle
+8,user8,user8@example.com,user,29,Boston
+9,user9,user9@example.com,user,26,Denver
+10,user10,user10@example.com,user,31,Atlanta
+11,user11,user11@example.com,user,27,Portland
+12,user12,user12@example.com,user,34,Dallas
+13,user13,user13@example.com,user,39,Phoenix
